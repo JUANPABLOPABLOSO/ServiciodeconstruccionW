@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construcción - Maestro Wilson Lenis Rengifo</title>
+    <style>
+        body {
+            background-color: #0a0a0a; /* Fondo oscuro futurista */
+            color: #e0e0e0; /* Texto en color claro */
+            font-family: 'Roboto', sans-serif; /* Fuente moderna */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #00ffcc; /* Color futurista */
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+        }
+
+        header h2 {
+            font-size: 2em;
+            color: #00ccff;
+            text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
+        }
+
+        section {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+            width: 80%;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        section h3 {
+            font-size: 1.8em;
+            color: #00ffcc;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+        }
+
+        section p {
+            font-size: 1.2em;
+            line-height: 1.5em;
+            color: #cccccc;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-info a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 25px;
+            background-color: #00ccff;
+            color: #0a0a0a;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            box-shadow: 0 0 15px rgba(0, 204, 255, 0.6);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-info a:hover {
+            background-color: #00ffcc;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #666666;
+            font-size: 1em;
+        }
+
+        .decorative-line {
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #00ffcc, #00ccff);
+            margin-bottom: 30px;
+        }
+
+        .neon-button {
+            display: inline-block;
+            margin: 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #0a0a0a;
+            background-color: #00ccff;
+            text-decoration: none;
+            font-size: 1.2em;
+            box-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
+            transition: transform 0.3s;
+        }
+
+        .neon-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilo para la pantalla negra y el mensaje */
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #ff0000;
+            font-size: 3em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100vh;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        #overlay span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: move-text 10s linear infinite;
+        }
+
+        @keyframes move-text {
+            0% { transform: translate(-50%, -150%); }
+            25% { transform: translate(-50%, 0%); }
+            50% { transform: translate(-50%, 150%); }
+            75% { transform: translate(-50%, 0%); }
+            100% { transform: translate(-50%, -150%); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Construcción</h1>
+        <h2>Maestro Wilson Lenis Rengifo</h2>
+    </header>
+
+    <div class="decorative-line"></div>
+
+    <section>
+        <h3>Descripción</h3>
+        <p>1. Ampliación y remodelación</p>
+        <p>2. Enchape - Acabados de Primera</p>
+        <p>3. Drywall - PVC - Pintura</p>
+        <p>4. Instalaciones Eléctricas</p>
+        <p>5. Mantenimiento Locativo entre otros...</p>
+    </section>
+
+    <div class="contact-info">
+        <a href="https://wa.me/573186752677" class="neon-button">WhatsApp: +57 3186752677</a>
+        <a href="https://www.facebook.com/juanmanuel.lenis.7" class="neon-button">Mi Facebook</a>
+    </div>
+
+    <section>
+        <h3>Información Adicional</h3>
+        <p>Ofrecemos garantía en todos nuestros trabajos.</p>
+        <p>Métodos de pago aceptados: Nequi, Efectivo.</p>
+    </section>
+
+    <footer>
+        © 2024 Maestro Wilson Lenis Rengifo. Todos los derechos reservados.
+    </footer>
+
+    <!-- Pantalla negra con mensaje tétrico -->
+    <div id="overlay">
+        <span>NO, reinicia la página</span>
+    </div>
+
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            document.getElementById('overlay').style.display = 'flex';
+            return false;
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+                document.getElementById('overlay').style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
